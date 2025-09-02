@@ -1,0 +1,151 @@
+/* --- Global Reset & Font Definition --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Define the local Axiforma font.
+  Make sure your .ttf files are in the '/assets/fonts/' directory.
+*/
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/aseets/fonts/Switzer-Regular.woff2') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('/aseets/fonts/Axiforma-Heavy.ttf') format('truetype');
+  font-weight: 600; /* Bold */
+  font-style: normal;
+}
+
+/* --- Base & Layout --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Creates the large gap */
+  align-items: flex-start; /* Left-aligns all content blocks */
+  min-height: 100vh;
+  padding: 24vh 8vw; /* Generous padding from top and left */
+  font-family: 'Axiforma', sans-serif; /* Use Axiforma as the default */
+  position: relative;
+}
+
+/* --- Content & Form Wrappers --- */
+.content-wrapper,
+.form-wrapper {
+  width: 100%;
+  max-width: 450px; /* A consistent max-width for content */
+  text-align: left; /* Ensure text inside is left-aligned */
+}
+
+/* --- Typography --- */
+.main-heading {
+  font-size: clamp(2rem, 4vw, 2.5rem); /* Adjust size for a cleaner look */
+  font-weight: 700; /* Bold */
+  color: #000000; /* Pure black text */
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap; /* Ensures it stays on a single line */
+}
+
+.main-heading .highlight {
+  color: #ff0c04; /* Orange/Red accent for "2.0" */
+}
+
+.subheading {
+  margin-top: 1rem;
+  color: #000000; /* Light black (dark gray) */
+  font-size: 1rem;
+  font-weight: 400; /* Regular */
+}
+
+/* --- Progress Bar --- */
+.progress-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.progress-bar-track {
+  width: 100%;
+  background-color: #F3F4F6; /* Very light gray for the track */
+  border-radius: 9999px;
+  height: 4px; /* Thin bar as requested */
+}
+
+.progress-bar-fill {
+  background-color: #D1D5DB; /* Muted gray for the fill */
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-text {
+  text-align: right;
+  font-size: 0.875rem;
+  color: #9CA3AF; /* Lighter gray for percentage */
+  margin-top: 0.5rem;
+}
+
+/* --- Form Section --- */
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #525252; /* Match subheading color */
+  margin-bottom: 0.75rem;
+  display: block; /* Ensures it takes its own line */
+}
+
+/* This is the key to the "button inside" effect.
+  This wrapper has the border and contains both the input and the button.
+*/
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #D1D5DB; /* Border is on the container */
+  border-radius: 0.5rem; /* 8px radius */
+  padding: 0.25rem; /* Small padding to house the button */
+  background-color: #FFFFFF;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.form-container:focus-within {
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.email-input {
+  flex-grow: 1;
+  padding: 0.625rem 0.75rem; /* Vertical and horizontal padding */
+  font-size: 0.875rem;
+  font-family: 'Axiforma', sans-serif;
+  border: none; /* Input has no border */
+  outline: none; /* No focus outline */
+  background-color: transparent; /* Transparent background */
+  color: #000000;
+}
+
+.email-input::placeholder {
+  color: #9CA3AF;
+}
+
+.notify-button {
+  background-color: #000000; /* Black button */
+  color: white;
+  font-weight: 400;
+  font-family: 'Axiforma', sans-serif;
+  padding: 0.625rem 1.5rem; /* Adjust padding to fit perfectly */
+  border-radius: 0.375rem; /* 6px radius, slightly less than the container */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.notify-button:hover {
+  background-color: #0000007e;
+}

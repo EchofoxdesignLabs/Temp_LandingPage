@@ -1,0 +1,23 @@
+/* components/Background/Background.module.css */
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* change if you want it above other things */
+  pointer-events: none; /* background should not capture pointer */
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.trailOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: normal; /* you can set multiply/screen for different looks */
+}
