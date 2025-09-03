@@ -4,6 +4,9 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  font-size: 62.5%;
+}
 
 @font-face {
   font-family: 'Axiforma';
@@ -46,7 +49,7 @@
 
 /* --- Typography --- */
 .main-heading {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(3.2rem, 4vw, 4rem);
   font-weight: 550;
   color: #000000;
   margin: 0;
@@ -54,11 +57,15 @@
   /* FIX: Forces the title to stay on a single line */
   white-space: nowrap;
 }
+/* --- Add this new rule in the Typography section --- */
+.main-heading .highlight-bold {
+  font-weight: 800; /* This uses the bold version of your Axiforma font */
+}
 
 .subheading {
-  margin-top: 1rem;
+  margin-top: 1.6rem;
   color: #525252;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 400;
 }
 
@@ -66,22 +73,22 @@
 .progress-container {
   width: 100%;
   /* FIX: Makes the progress bar shorter than the text above */
-  max-width: 500px;
-  margin-top: 2rem;
+  max-width: 50rem; /* 500px */
+  margin-top: 3.2rem; /* 32px */
 }
 
 .progress-text {
   text-align: left;
-  font-size: 0.875rem;
+  font-size: 1.4rem; /* 14px */
   color: #000000;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem; /* 8px */
   font-weight: 600;
 }
 
 .progress-bar-track {
   width: 100%;
   border-radius: 9999px;
-  height: 6px;
+  height: 0.6rem; /* 6px */
   position: relative;
 }
 
@@ -96,13 +103,13 @@
   top: 50%;
   transform: translateY(-50%);
   display: flex;
-  gap: 4px;
-  margin-left: 6px;
+  gap: 0.4rem; /* 4px */
+  margin-left: 0.6rem; /* 6px */
 }
 
 .dot {
-  width: 10px;
-  height: 6px;
+  width: 0.6rem; /* 6px */
+  height: 0.6rem; /* 6px */
   animation: heartbeat 2s infinite ease-in-out;
 }
 
@@ -124,10 +131,10 @@
 }
 /* --- Form Section --- */
 .form-label {
-  font-size: 0.875rem;
+  font-size: 1.4rem; /* 14px */
   font-weight: 400;
   color: #525252;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem; /* 12px */
   display: block;
 }
 
@@ -136,7 +143,7 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid #D1D5DB;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem; /* 8px */
   padding: 0.25rem;
   background-color: #FFFFFF;
   transition: box-shadow 0.2s, border-color 0.2s;
@@ -149,8 +156,8 @@
 
 .email-input {
   flex-grow: 1;
-  padding: 0.625rem 0.75rem;
-  font-size: 0.875rem;
+  padding: 1rem 1.2rem; /* 10px 12px */
+  font-size: 1.4rem; /* 14px */
   font-family: 'Axiforma', sans-serif;
   border: none;
   outline: none;
@@ -167,8 +174,8 @@
   color: white;
   font-weight: 400;
   font-family: 'Axiforma', sans-serif;
-  padding: 0.625rem 1.5rem;
-  border-radius: 0.375rem;
+  padding: 1rem 2.4rem; /* 10px 24px */
+  border-radius: 0.6rem; /* 6px */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -177,4 +184,48 @@
 
 .notify-button:hover {
   background-color: #0000007e;
+}
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15vh 6vw;
+  }
+  .content-wrapper,
+  .form-wrapper,
+  .progress-container {
+    max-width: none;
+  }
+  .main-heading {
+    white-space: normal;
+  }
+}
+@media (max-width: 480px) {
+  .app-container {
+    padding: 10vh 2.4rem; /* 24px */
+  }
+  .main-heading {
+    /* Adjust clamp for a smaller base font size on mobile */
+    font-size: clamp(2.8rem, 8vw, 3.6rem); /* 28px to 36px */
+  }
+  .subheading {
+    font-size: 1.4rem; /* 14px */
+  }
+  .form-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem; /* 12px */
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .email-input {
+    border: 1px solid #D1D5DB;
+    border-radius: 0.8rem; /* 8px */
+    text-align: center;
+    padding: 1.4rem; /* 14px */
+  }
+  .notify-button {
+    padding: 1.4rem 2.4rem; /* 14px 24px */
+    border-radius: 0.8rem; /* 8px */
+  }
 }

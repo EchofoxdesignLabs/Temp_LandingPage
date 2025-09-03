@@ -45,7 +45,7 @@ function App() {
       
       <div className="content-wrapper">
         <h1 className="main-heading">
-          Your entry into Echofox Design is in Stasis
+          Your entry into <span className="highlight-bold">Echofox Design Labs</span> is in Stasis
         </h1>
         <p className="subheading">
           Please be on standby... Something sharper is coming up on the horizon
