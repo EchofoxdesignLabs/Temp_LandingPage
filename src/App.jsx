@@ -8,27 +8,6 @@ function App() {
   const [email, setEmail] = useState('');
   const [notification, setNotification] = useState('');
 
-  // This useEffect handles the animated favicon
-  // useEffect(() => {
-  //   const favicon = document.getElementById('favicon');
-  //   const frames = [];
-  //   const frameCount = 134; 
-  //   for(let i = 0; i <= frameCount; i++) {
-  //     const paddedIndex = i.toString().padStart(3, '0');
-  //     frames.push(`/tile${paddedIndex}.png`);
-  //   }
-    
-  //   let frameIndex = 0;
-  //   const animateFavicon = () => {
-  //     frameIndex = (frameIndex + 1) % frames.length;
-  //     favicon.href = frames[frameIndex];
-  //   };
-
-  //   const animationInterval = setInterval(animateFavicon, 40);
-
-  //   return () => clearInterval(animationInterval);
-  // },[]);
-
   const handleNotifyMe = (e) => {
     e.preventDefault();
     if (email) {
@@ -45,10 +24,10 @@ function App() {
       
       <div className="content-wrapper">
         <h1 className="main-heading">
-          Your entry into <span className="highlight-bold">Echofox Design Labs</span> is in Stasis
+          Welcome to <span className="highlight-bold">Echofox Design Labs</span>
         </h1>
         <p className="subheading">
-          Please be on standby... Something sharper is coming up on the horizon
+          Level up is in progress… the Reveal is near
         </p>
         
         {/* --- Updated Progress Bar Structure --- */}
