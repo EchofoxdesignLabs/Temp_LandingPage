@@ -1,39 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Background from './components/Background/Background';
-import { int } from 'three/tsl';
 
 function App() {
-  const [progress, setProgress] = useState(13);
+  // Set a fixed progress value as seen in the new design
+  const [progress, setProgress] = useState(88.6);
   const [email, setEmail] = useState('');
   const [notification, setNotification] = useState('');
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setProgress(80); // Set to 80% to match the Figma design
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-  useEffect(() => {
-    const favicon = document.getElementById('favicon');
-    const frames = [];
-    const frameCount = 134; // The total number of frames
-    for(let i = 0;i<=frameCount;i++)
-    {
-      const paddedIndex = i.toString().padStart(3, '0');
-      frames.push(`/tile${paddedIndex}.png`);
-    }
-    let frameIndex = 0;
-    const animateFavicon = () => {
-    frameIndex = (frameIndex + 1) % frames.length;
-    favicon.href = frames[frameIndex];
-  };
+  // This useEffect handles the animated favicon
+  // useEffect(() => {
+  //   const favicon = document.getElementById('favicon');
+  //   const frames = [];
+  //   const frameCount = 134; 
+  //   for(let i = 0; i <= frameCount; i++) {
+  //     const paddedIndex = i.toString().padStart(3, '0');
+  //     frames.push(`/tile${paddedIndex}.png`);
+  //   }
+    
+  //   let frameIndex = 0;
+  //   const animateFavicon = () => {
+  //     frameIndex = (frameIndex + 1) % frames.length;
+  //     favicon.href = frames[frameIndex];
+  //   };
 
-  // The 40ms interval is still good for this many frames
-  const animationInterval = setInterval(animateFavicon, 40);
+  //   const animationInterval = setInterval(animateFavicon, 40);
 
-  return () => clearInterval(animationInterval);
-  },[]);
+  //   return () => clearInterval(animationInterval);
+  // },[]);
 
   const handleNotifyMe = (e) => {
     e.preventDefault();
@@ -41,33 +35,37 @@ function App() {
       console.log('Email submitted:', email);
       setNotification(`Thank you! We'll notify you at ${email}.`);
       setEmail('');
-      setTimeout(() => setNotification(''), 5000); // Clear message after 5 seconds
+      setTimeout(() => setNotification(''), 5000);
     }
   };
 
   return (
-    
     <div className="app-container">
-      {/* Ensure your model path is correct. 
-        The file 'contour.glb' should be at: public/assets/models/contour.glb
-      */}
-      
       <Background modelUrl="/aseets/models/contour_optimized.glb" theme="light" />
+      
       <div className="content-wrapper">
         <h1 className="main-heading">
-          You've wandered into Echofox <span className="highlight">2.0</span>
+          Your entry into Echofox Design is in Stasis
         </h1>
         <p className="subheading">
-          Something sharper is coming up on the horizon..
+          Please be on standby... Something sharper is coming up on the horizon
         </p>
+        
+        {/* --- Updated Progress Bar Structure --- */}
         <div className="progress-container">
+          <p className="progress-text">{progress}%</p>
           <div className="progress-bar-track">
             <div
               className="progress-bar-fill"
               style={{ width: `${progress}%` }}
             ></div>
+            {/* The new animated dots, positioned dynamically */}
+            <div className="loader-dots" style={{ left: `${progress}%` }}>
+              <div className="dot dot-1"></div>
+              <div className="dot dot-2"></div>
+              <div className="dot dot-3"></div>
+            </div>
           </div>
-          <p className="progress-text">{progress}%</p>
         </div>
       </div>
 
