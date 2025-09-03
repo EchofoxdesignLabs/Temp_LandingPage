@@ -1,0 +1,86 @@
+/* src/components/NotifyForm/email.module.css */
+
+/* --- Form Section --- */
+.formWrapper {
+  width: 100%;
+  max-width: 450px; /* Narrower for the form */
+  text-align: left;
+}
+.formLabel {
+  font-size: 1.4rem; /* 14px */
+  font-weight: 400;
+  color: #525252;
+  margin-bottom: 1.2rem; /* 12px */
+  display: block;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #D1D5DB;
+  border-radius: 1.2rem;
+  padding: 0.25rem;
+  background-color: #FFFFFF;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.formContainer:focus-within {
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.emailInput {
+  flex-grow: 1;
+  padding: 1rem 1.2rem;
+  font-size: 1.4rem;
+  /* If you don't have 'Axiforma', it will fall back to sans-serif */
+  font-family: 'Axiforma', sans-serif;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+.emailInput::placeholder {
+  color: #9CA3AF;
+}
+
+.notifyButton {
+  background-color: #000000;
+  color: white;
+  font-weight: 400;
+  /* If you don't have 'Axiforma', it will fall back to sans-serif */
+  font-family: 'Axiforma', sans-serif;
+  padding: 1rem 2.4rem;
+  border-radius: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.notifyButton:hover:not(:disabled) {
+  background-color: #333333; /* A slightly lighter black for hover */
+}
+
+.notifyButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Notification Message Styles (Kept from before) --- */
+.notificationMessage {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.success {
+  color: #28a745;
+}
+
+.error {
+  color: #dc3545;
+}

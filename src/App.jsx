@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Background from './components/Background/Background';
+import NotifyForm from './components/Email/Email';
 
 function App() {
   // Set a fixed progress value as seen in the new design
   const [progress, setProgress] = useState(88.6);
-  const [email, setEmail] = useState('');
-  const [notification, setNotification] = useState('');
-
-  const handleNotifyMe = (e) => {
-    e.preventDefault();
-    if (email) {
-      console.log('Email submitted:', email);
-      setNotification(`Thank you! We'll notify you at ${email}.`);
-      setEmail('');
-      setTimeout(() => setNotification(''), 5000);
-    }
-  };
 
   return (
     <div className="app-container">
@@ -48,7 +37,7 @@ function App() {
         </div>
       </div>
 
-      <div className="form-wrapper">
+      {/* <div className="form-wrapper">
         <p className="form-label">Get notified when we launch!</p>
         <form onSubmit={handleNotifyMe} className="form-container">
           <input
@@ -65,7 +54,8 @@ function App() {
           </button>
         </form>
         {notification && <p className="notification-message">{notification}</p>}
-      </div>
+      </div> */}
+      <NotifyForm />
     </div>
   );
 }

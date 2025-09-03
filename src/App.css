@@ -130,61 +130,7 @@ html {
   }
 }
 /* --- Form Section --- */
-.form-label {
-  font-size: 1.4rem; /* 14px */
-  font-weight: 400;
-  color: #525252;
-  margin-bottom: 1.2rem; /* 12px */
-  display: block;
-}
 
-.form-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #D1D5DB;
-  border-radius: 1.2rem; /* 8px */
-  padding: 0.25rem;
-  background-color: #FFFFFF;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-.form-container:focus-within {
-  border-color: #000000;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-}
-
-.email-input {
-  flex-grow: 1;
-  padding: 1rem 1.2rem; /* 10px 12px */
-  font-size: 1.4rem; /* 14px */
-  font-family: 'Axiforma', sans-serif;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: #000000;
-}
-
-.email-input::placeholder {
-  color: #9CA3AF;
-}
-
-.notify-button {
-  background-color: #000000;
-  color: white;
-  font-weight: 400;
-  font-family: 'Axiforma', sans-serif;
-  padding: 1rem 2.4rem; /* 10px 24px */
-  border-radius: 1.2rem; /* 6px */
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-.notify-button:hover {
-  background-color: #0000007e;
-}
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .app-container {
