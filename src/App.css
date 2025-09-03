@@ -102,27 +102,30 @@
 }
 
 .dot {
-  width: 6px;
+  width: 10px;
   height: 6px;
   border-radius: 1px;
-  animation: shimmer 1.6s infinite ease-in-out;
+  animation: heartbeat 2s infinite ease-in-out;
 }
 
-.dot-1 { background-color: #67e8f9; }
-.dot-2 { background-color: #86efac; animation-delay: 0.2s; }
-.dot-3 { background-color: #f472b6; animation-delay: 0.4s; }
+.dot-1 { background-color: #323435; }
+.dot-2 { background-color: #E90C59; animation-delay: 0.2s; }
+.dot-3 { background-color: #46DFF0; animation-delay: 0.4s; }
 
-@keyframes shimmer {
+@keyframes heartbeat {
   0%, 100% {
-    opacity: 0.7;
-    transform: scale(1);
+    transform: scaleY(1);
+    opacity: 0.5;
   }
-  50% {
+  15% {
+    transform: scaleY(1.5); /* Increased scale slightly for more impact */
     opacity: 1;
-    transform: scale(1.4); /* Scale up to 120% at the brightest point */
+  }
+  30% {
+    transform: scaleY(1);
+    opacity: 0.5;
   }
 }
-
 /* --- Form Section --- */
 .form-label {
   font-size: 0.875rem;
