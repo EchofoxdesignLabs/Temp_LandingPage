@@ -73,7 +73,7 @@ const NotifyForm = () => {
   return (
     <>
     <div className={styles.formWrapper}>
-      <p className={styles.formLabel}>Get notified when we launch!</p>
+      <p className={styles.formLabel}>Get notified when the Next Phase begins!</p>
       <form onSubmit={handleNotifyMe} className={styles.formContainer}>
         <input
           id="email"
